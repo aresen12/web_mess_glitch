@@ -83,11 +83,7 @@ def main():
 
     
 if __name__ == "__main__":
-    try:
-        db_session.global_init('db/master_paste.db')
-    except Exception:
-        os.mkdir("db")
-        db_session.global_init('db/master_paste.db')
+    db_session.global_init('db/master_paste.db')
     from mess import mg
     app.register_blueprint(mg)
     app.run()  # ssl_context="adhoc"
